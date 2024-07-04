@@ -15,10 +15,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+            - run: |
+                mkdir dist
+                cp -R folder_1 dist
             - uses: actions/upload-pages-artifact@v3
               with:
                 name: page-1
-                path: folder_1
+                path: dist
 
     publish:
         runs-on: ubuntu-latest
